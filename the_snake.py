@@ -33,7 +33,7 @@ SPEED = 20
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), 0, 32)
 
 # Заголовок окна игрового поля:
-pygame.display.set_caption('Змейка')
+pygame.display.set_caption("Змейка")
 
 # Настройка времени:
 clock = pygame.time.Clock()
@@ -71,8 +71,7 @@ class Apple(GameObject):
     # Метод draw класса Apple
     def draw(self, surface):
         """Рисует объект на заданной поверхности как прямоугольник с рамкой."""
-        rect = pygame.Rect(
-            (self.position[0], self.position[1]), (GRID_SIZE, GRID_SIZE))
+        rect = pygame.Rect((self.position[0], self.position[1]), (GRID_SIZE, GRID_SIZE))
         pygame.draw.rect(surface, self.body_color, rect)
         pygame.draw.rect(surface, BORDER_COLOR, rect, 1)
 
@@ -122,8 +121,7 @@ class Snake(GameObject):
         тело, голову и удаляемый последний сегмент.
         """
         for position in self.positions[:-1]:
-            rect = pygame.Rect(
-                (position[0], position[1]), (GRID_SIZE, GRID_SIZE))
+            rect = pygame.Rect((position[0], position[1]), (GRID_SIZE, GRID_SIZE))
             pygame.draw.rect(surface, self.body_color, rect)
             pygame.draw.rect(surface, BORDER_COLOR, rect, 1)
 
@@ -209,5 +207,5 @@ def main():
         pygame.display.update()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
